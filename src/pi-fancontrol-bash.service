@@ -1,0 +1,14 @@
+[Unit]
+Description = PI Fan Control bash
+After=sysinit.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=no
+RemainAfterExit=yes
+User=root
+ExecStart=/etc/pi-fancontrol-bash/fancontrol-service.sh start
+
+[Install]
+WantedBy=multi-user.target
