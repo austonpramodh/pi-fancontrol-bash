@@ -22,3 +22,16 @@ fan turns on
 Set the interval (in seconds) at which the temperature gets scanned
 
     INTERVAL="30"
+
+Get status of the service
+
+    sudo systemctl status pi-fancontrol-bash.service
+
+Disabling the service
+
+    sudo systemctl disable pi-fancontrol-bash.service
+
+Uninstalling the service
+
+    sudo chmod +x ./uninstall.sh
+    sudo ./uninstall.sh

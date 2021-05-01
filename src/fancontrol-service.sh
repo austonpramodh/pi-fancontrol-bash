@@ -55,7 +55,8 @@ while true; do
       echo "$(date +%d.%m.%Y-%H:%M:%S): fan on at $current_temp °C"
     fi
   else
-    if [ "$current_status" = "1" ]; then
+    # Turn off fan when the temperature is 5 °C less than the threshold
+    if [ "$current_temp" -lt "$((THRESHOLD - 5))" ] && [ "$current_status" = "1" ]; then
       echo "0" >/sys/class/gpio/gpio${GPIO}/value
       echo "$(date +%d.%m.%Y-%H:%M:%S): fan off at $current_temp °C"
     fi
