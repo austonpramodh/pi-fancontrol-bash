@@ -8,7 +8,7 @@ Type=simple
 Restart=no
 RemainAfterExit=yes
 User=root
-ExecStart=/etc/pi-fancontrol-bash/fancontrol-service.sh start
+ExecStart=/etc/pi-fancontrol-bash/fancontrol-service.sh
 
 [Install]
 WantedBy=multi-user.target
